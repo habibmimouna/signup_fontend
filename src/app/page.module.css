@@ -1,0 +1,19 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  
+}
+
+.element{
+  margin-bottom: 10px;
+  height: 20px;
+  width: 250px;
+  font-size: large;
+}
+.elements{
+  position: relative;
+ display: inline;
+}
