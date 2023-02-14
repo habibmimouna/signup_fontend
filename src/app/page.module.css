@@ -17,3 +17,9 @@
   position: relative;
  display: inline;
 }
+.button{
+  margin-bottom: 10px;
+  height: 30px;
+  width: 250px;
+  font-size: large;
+}
