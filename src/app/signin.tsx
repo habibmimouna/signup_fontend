@@ -1,7 +1,8 @@
-import styles from './page.module.css'
+import styles from './page.module.css';
+import axios from 'axios'
 
 export const SignIn = () => {
-    const showUser = (e: any) => {
+    const showUser = async (e: any) => {
         e.preventDefault()
         const target = e.target as typeof e.target & {
             email: { value: string };
@@ -14,8 +15,17 @@ export const SignIn = () => {
             password,
             email
         };
-    console.log(userdata);
-    
+
+        await axios.post('http://localhost:4200/auth/signin', userdata)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch( (error) => {
+                console.log(error);
+            });
+        console.log(userdata);
+
+
 
     }
     return (
@@ -27,12 +37,12 @@ export const SignIn = () => {
                 <button type="submit">LOG IN</button>
                 <div className={styles.elements}>
                     <h3>don't have an account create one</h3>
-            
+
                 </div>
             </form>
             <a href='sign-up'>
-                        <button  >Sign up</button>
-                    </a>
+                <button  >Sign up</button>
+            </a>
         </main>
 
     )
